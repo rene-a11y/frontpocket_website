@@ -7,9 +7,10 @@ DirectoryIndex index.html
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
-  # Forceer HTTPS
-  RewriteCond %{HTTPS} !=on
-  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+  # Forceer HTTPS — tijdelijk uit tot Let's Encrypt bij Strato is gekoppeld.
+  # Zodra SSL-certificaat actief is: onderstaande twee regels weer uncommenten.
+  # RewriteCond %{HTTPS} !=on
+  # RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
   # Verwijder trailing slash (behalve op de root)
   RewriteCond %{REQUEST_FILENAME} !-d
