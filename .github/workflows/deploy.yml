@@ -17,22 +17,31 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Upload naar Strato
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server: ${{ secrets.STRATO_FTP_HOST }}
-          username: ${{ secrets.STRATO_FTP_USER }}
-          password: ${{ secrets.STRATO_FTP_PASSWORD }}
-          port: ${{ secrets.STRATO_FTP_PORT || 22 }}
-          protocol: ${{ secrets.STRATO_FTP_PROTOCOL || 'sftp' }}
-          server-dir: ${{ secrets.STRATO_FTP_DIR || '/' }}
-          local-dir: ./
-          # Wat NIET mee moet naar de server:
-          exclude: |
-            **/.git*
-            **/.git*/**
-            **/.github/**
-            **/node_modules/**
-            **/README.md
-            **/.gitignore
-            **/.env*
+      - name: Zet SSH host key (skip host key check)
+        run: mkdir -p ~/.ssh && ssh-keyscan -p ${{ secrets.STRATO_FTP_PORT || 22 }} ${{ secrets.STRATO_FTP_HOST }} >> ~/.ssh/known_hosts 2>/dev/null || true
+
+      - name: Installeer sshpass en lftp
+        run: sudo apt-get update && sudo apt-get install -y sshpass lftp
+
+      - name: Upload via SFTP naar Strato
+        env:
+          SFTP_HOST: ${{ secrets.STRATO_FTP_HOST }}
+          SFTP_USER: ${{ secrets.STRATO_FTP_USER }}
+          SFTP_PASS: ${{ secrets.STRATO_FTP_PASSWORD }}
+          SFTP_PORT: ${{ secrets.STRATO_FTP_PORT || 22 }}
+          SFTP_DIR:  ${{ secrets.STRATO_FTP_DIR || '/' }}
+        run: |
+          lftp -c "
+            set sftp:auto-confirm yes;
+            set net:max-retries 3;
+            set net:timeout 20;
+            open -u \"$SFTP_USER\",\"$SFTP_PASS\" sftp://$SFTP_HOST:$SFTP_PORT;
+            mirror -R --delete --verbose \
+              --exclude-glob .git* \
+              --exclude-glob .github/ \
+              --exclude-glob README.md \
+              --exclude-glob node_modules/ \
+              --exclude-glob .env* \
+              --exclude-glob input/ \
+              ./ \"$SFTP_DIR\";
+          "
