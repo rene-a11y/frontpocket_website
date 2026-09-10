@@ -1,0 +1,38 @@
+name: Deploy naar Strato
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-production
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    name: Upload naar Strato via SFTP
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Upload naar Strato
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.STRATO_FTP_HOST }}
+          username: ${{ secrets.STRATO_FTP_USER }}
+          password: ${{ secrets.STRATO_FTP_PASSWORD }}
+          port: ${{ secrets.STRATO_FTP_PORT || 22 }}
+          protocol: ${{ secrets.STRATO_FTP_PROTOCOL || 'sftp' }}
+          server-dir: ${{ secrets.STRATO_FTP_DIR || '/' }}
+          local-dir: ./
+          # Wat NIET mee moet naar de server:
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/.github/**
+            **/node_modules/**
+            **/README.md
+            **/.gitignore
+            **/.env*

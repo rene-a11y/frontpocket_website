@@ -1,0 +1,16 @@
+# Alleen bronbestanden gaan in git — geen build output, geen secrets
+.DS_Store
+Thumbs.db
+*.log
+
+# Referentiebestanden van de opdracht: geen build-input, niet meepushen
+input/
+
+# Editor / OS troep
+.vscode/
+.idea/
+*.swp
+
+# Lokale env
+.env
+.env.local

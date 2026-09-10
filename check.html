@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>De check — waar lekt jouw week weg? · Front Pocket</title>
+<meta name="description" content="Zes vragen, ongeveer een minuut. Je ziet meteen op je scherm hoeveel uur en hoeveel geld er bij jou weglekt aan werk dat een computer had kunnen doen.">
+<meta name="robots" content="noindex,nofollow">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Waar lekt jouw week weg? · Front Pocket">
+<meta property="og:description" content="Zes vragen, ongeveer een minuut. Zie meteen hoeveel uur en geld er weglekt.">
+<meta property="og:image" content="/assets/og.png">
+<meta property="og:locale" content="nl_NL">
+
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+
+<div class="page">
+
+  <div class="merk">
+    <span class="wm">frontpocket<i>.</i></span>
+    <span class="tag">De check</span>
+  </div>
+
+  <main>
+
+    <!-- START -->
+    <section id="start" class="paneel">
+      <span class="pill">Voor bouw, installatie en buitenwerk</span>
+      <h1>Waar lekt jouw week weg?</h1>
+      <p class="check-lead">Zes vragen, ongeveer een minuut. Je ziet meteen op je scherm hoeveel uur en hoeveel geld er bij jou weglekt aan werk dat een computer had kunnen doen.</p>
+      <ul class="res">
+        <li>Hoeveel uur per week je kwijt bent aan uitwerken, uitzoeken en nabellen</li>
+        <li>Wat dat je per jaar kost, gerekend met jouw eigen uurtarief</li>
+        <li>Welk stuk van je week het grootste lek is, en wat daaraan te doen is</li>
+      </ul>
+      <p class="small">Geen mailadres nodig. Je uitkomst blijft op je eigen scherm.</p>
+      <div class="check-acties">
+        <button class="knop" id="startknop" type="button">Begin de check</button>
+        <a class="knop stil" href="/">Terug naar frontpocket.</a>
+      </div>
+    </section>
+
+    <!-- VRAAG -->
+    <section id="vraag" class="paneel" hidden>
+      <div class="voortgang" aria-live="polite">
+        <div class="rij"><span id="teller">Vraag 1 van 6</span><span id="thema"></span></div>
+        <div class="balk" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span id="balkvul" style="width:16%"></span></div>
+      </div>
+      <h2 id="vraagtekst">&nbsp;</h2>
+      <p class="small" id="vraaghulp"></p>
+      <div class="opties" id="opties" role="group" aria-labelledby="vraagtekst"></div>
+      <button class="knop stil" id="terug" type="button" hidden>Vorige vraag</button>
+    </section>
+
+    <!-- UITKOMST -->
+    <section id="uitkomst" class="paneel" hidden>
+      <span class="eyebrow">Jouw uitkomst</span>
+      <h2 id="kop">&nbsp;</h2>
+
+      <div class="uitkomst-blok">
+        <div>
+          <span class="groot" id="perjaar">&nbsp;</span>
+          <p class="small" id="perjaartekst">&nbsp;</p>
+        </div>
+        <div class="cijfers">
+          <div class="cel"><span class="n" id="perweek">&nbsp;</span><span class="l">uur per week aan werk dat een computer had kunnen doen</span></div>
+          <div class="cel"><span class="n" id="urenjaar">&nbsp;</span><span class="l">uur per jaar, gerekend met 46 werkweken</span></div>
+        </div>
+
+        <div class="staaf" id="staaf" aria-label="Verdeling per soort werk"></div>
+
+        <div class="lek">
+          <span class="k">Je grootste lek</span>
+          <h3 id="lektitel">&nbsp;</h3>
+          <p id="lektekst" class="small">&nbsp;</p>
+        </div>
+
+        <p class="small" id="nuance">&nbsp;</p>
+      </div>
+
+      <h3>Wat je hiermee doet</h3>
+      <p id="advies">&nbsp;</p>
+      <div class="check-acties">
+        <a class="knop" id="boek" data-boek="check-uitkomst" href="#" target="_blank" rel="noopener">Bespreek je uitkomst in 20 minuten</a>
+        <button class="knop stil" id="opnieuw" type="button">Opnieuw invullen</button>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="voet">
+    <span class="wm">frontpocket<i>.</i></span>
+    <p>Front Pocket is een handelsnaam van IAS17 Consultancy BV, Hoorn.</p>
+    <p>De uitkomst is een schatting op basis van jouw eigen antwoorden, geen meting. Alle bedragen zijn exclusief btw.</p>
+  </footer>
+
+</div>
+
+<script src="/assets/config.js"></script>
+<script src="/assets/check.js"></script>
+</body>
+</html>
