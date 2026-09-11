@@ -4,6 +4,14 @@
 Options -Indexes
 DirectoryIndex index.html
 
+# Blokkeer toegang tot verborgen dirs (.git, .github, .env, etc.) en README
+# — vangnet mocht er ooit iets meegedeployed worden dat niet publiek mag.
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteRule "(^|/)\." - [F]
+  RewriteRule "^README\.md$" - [F,NC]
+</IfModule>
+
 <IfModule mod_rewrite.c>
   RewriteEngine On
 

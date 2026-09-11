@@ -20,28 +20,50 @@ jobs:
       - name: Zet SSH host key (skip host key check)
         run: mkdir -p ~/.ssh && ssh-keyscan -p ${{ secrets.STRATO_FTP_PORT || 22 }} ${{ secrets.STRATO_FTP_HOST }} >> ~/.ssh/known_hosts 2>/dev/null || true
 
-      - name: Installeer sshpass en lftp
-        run: sudo apt-get update && sudo apt-get install -y sshpass lftp
+      - name: Installeer lftp
+        run: sudo apt-get update && sudo apt-get install -y lftp
 
-      - name: Upload via SFTP naar Strato
+      - name: Upload via SFTP naar Strato (naar /public op de server)
         env:
           SFTP_HOST: ${{ secrets.STRATO_FTP_HOST }}
           SFTP_USER: ${{ secrets.STRATO_FTP_USER }}
           SFTP_PASS: ${{ secrets.STRATO_FTP_PASSWORD }}
           SFTP_PORT: ${{ secrets.STRATO_FTP_PORT || 22 }}
-          SFTP_DIR:  ${{ secrets.STRATO_FTP_DIR || '/' }}
+          SFTP_BASE: ${{ secrets.STRATO_FTP_DIR || '/' }}
         run: |
+          # Doelmap op de server. Strato wil per se een submap als docroot.
+          TARGET="${SFTP_BASE%/}/public"
+
           lftp -c "
             set sftp:auto-confirm yes;
             set net:max-retries 3;
             set net:timeout 20;
             open -u \"$SFTP_USER\",\"$SFTP_PASS\" sftp://$SFTP_HOST:$SFTP_PORT;
+
+            # Ruim oude rommel op de root op die vroeger per ongeluk is
+            # meegedeployed (voor de docroot verhuisde naar /public).
+            rm -rf \"${SFTP_BASE%/}/.git\"      || true;
+            rm -rf \"${SFTP_BASE%/}/.github\"   || true;
+            rm -rf \"${SFTP_BASE%/}/assets\"    || true;
+            rm -f  \"${SFTP_BASE%/}/index.html\"  || true;
+            rm -f  \"${SFTP_BASE%/}/check.html\"  || true;
+            rm -f  \"${SFTP_BASE%/}/robots.txt\"  || true;
+            rm -f  \"${SFTP_BASE%/}/.htaccess\"   || true;
+            rm -f  \"${SFTP_BASE%/}/README.md\"   || true;
+            rm -f  \"${SFTP_BASE%/}/.gitignore\"  || true;
+
+            # Zorg dat de doelmap bestaat
+            mkdir -p \"$TARGET\" || true;
+
+            # Spiegel lokaal -> server/public.
+            # --exclude is een regex, --exclude-glob is een glob-patroon.
             mirror -R --delete --verbose \
-              --exclude-glob .git* \
-              --exclude-glob .github/ \
-              --exclude-glob README.md \
-              --exclude-glob node_modules/ \
+              --exclude '^\\.git(/|$)' \
+              --exclude '^\\.github(/|$)' \
+              --exclude '^node_modules(/|$)' \
+              --exclude '^input(/|$)' \
+              --exclude-glob .gitignore \
               --exclude-glob .env* \
-              --exclude-glob input/ \
-              ./ \"$SFTP_DIR\";
+              --exclude-glob README.md \
+              ./ \"$TARGET\";
           "
