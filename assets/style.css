@@ -61,8 +61,8 @@ a{color:inherit}
 .kop-groep{display:flex;flex-direction:column;gap:.45rem;margin-bottom:1.3rem}
 .kop-groep p{font-size:1.02rem;max-width:42rem}
 
-/* woordmerk — tracking gedempt (van -.045em naar -.03em) omdat
-   `frontpocket` een stuk langer is dan `fixyo` en anders dichtklapt */
+/* woordmerk — tracking gedempt naar -.03em omdat het merk uit 11
+   letters bestaat; met tightere tracking klapt het woord dicht */
 .wm{font-weight:800;letter-spacing:-.03em;color:var(--ink);line-height:1}
 .wm b{font-weight:800}
 .wm i{font-style:normal;color:var(--klei)}
