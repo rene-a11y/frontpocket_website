@@ -218,8 +218,6 @@ section.pijn{display:flex;flex-direction:column;gap:1.1rem;padding-top:2rem;bord
 .prijskaart{background:var(--surface);border:1px solid var(--hairline);border-radius:16px;
   padding:1.4rem 1.4rem;display:flex;flex-direction:column;gap:.6rem}
 .prijskaart.groot{border-color:var(--klei);border-width:2px}
-.prijskaart .bedrag{font-weight:800;font-size:2.3rem;letter-spacing:-.035em;color:var(--ink);line-height:1;font-variant-numeric:tabular-nums}
-.prijskaart .permaand{font-weight:400;font-size:1rem;color:var(--muted);line-height:1.2;font-variant-numeric:tabular-nums;margin-top:-.15rem}
 .prijskaart .wat{font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
 .prijskaart.groot .wat{color:var(--klei)}
 .prijskaart p{font-size:.96rem}
