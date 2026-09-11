@@ -47,7 +47,8 @@
 }
 
 *{box-sizing:border-box}
-html{overflow-x:hidden}
+html{overflow-x:hidden;scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 body{margin:0;background:var(--zand);color:var(--ink);
   font-family:"Schibsted Grotesk","Segoe UI",system-ui,-apple-system,sans-serif;
   font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
@@ -100,12 +101,16 @@ header.hero{display:grid;grid-template-columns:1fr;gap:1.9rem;align-items:center
 .knop.stil{background:transparent;color:var(--muted);border-color:var(--hairline);font-weight:600;padding:.7rem 1.2rem;font-size:.95rem}
 .knop.stil:hover{background:var(--shade);color:var(--ink);border-color:var(--faint)}
 
-/* probleem-oplossing kaarten */
+/* probleem-oplossing tegels — zes stuks, elk klikbaar. Raster:
+   1 kolom mobiel, 2 vanaf 34rem, 3 vanaf 58rem (twee rijen van 3). */
 .po{display:grid;grid-template-columns:1fr;gap:1rem}
-@media(min-width:38rem){.po{grid-template-columns:1fr 1fr}}
-@media(min-width:58rem){.po{grid-template-columns:repeat(4,1fr)}}
+@media(min-width:34rem){.po{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(min-width:58rem){.po{grid-template-columns:repeat(3,minmax(0,1fr))}}
 .pokaart{background:var(--surface);border:1px solid var(--hairline);border-radius:14px;
-  padding:1.15rem 1.2rem;display:flex;flex-direction:column;gap:.75rem}
+  padding:1.15rem 1.2rem;display:flex;flex-direction:column;gap:.75rem;
+  color:inherit;text-decoration:none;transition:border-color .15s ease}
+.pokaart:hover{border-color:var(--ink)}
+.pokaart:focus-visible{outline:2px solid var(--klei);outline-offset:2px}
 .pokaart h3{font-size:1rem}
 .pokaart .nu,.pokaart .met{display:flex;flex-direction:column;gap:.15rem;font-size:.94rem;line-height:1.45}
 .pokaart .nu span,.pokaart .met span{font-size:.64rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
@@ -113,6 +118,10 @@ header.hero{display:grid;grid-template-columns:1fr;gap:1.9rem;align-items:center
 .pokaart .nu{color:var(--muted)}
 .pokaart .met span{color:var(--klei)}
 .pokaart .met{color:var(--ink);border-top:1px solid var(--hairline);padding-top:.7rem}
+.pokaart .po-link{margin-top:auto;font-size:.86rem;font-weight:700;color:var(--klei);
+  letter-spacing:-.005em;display:inline-flex;align-items:center;gap:.3em;
+  transition:transform .15s ease}
+.pokaart:hover .po-link{transform:translateX(2px)}
 
 /* alles-erin */
 .allesblok{background:var(--donker);color:var(--on-donker);border-radius:20px;
@@ -136,8 +145,9 @@ header.hero{display:grid;grid-template-columns:1fr;gap:1.9rem;align-items:center
 .allesvoet p{color:var(--on-donker-muted);font-size:.98rem;max-width:34rem}
 .allesvoet strong{color:#FFFFFF;font-weight:700}
 
-/* pijnblokken */
-section.pijn{display:flex;flex-direction:column;gap:1.1rem;padding-top:2rem;border-top:1px solid var(--hairline-2)}
+/* pijnblokken. scroll-margin-top compenseert de merkbalk (~4rem)
+   plus 1rem lucht, zodat een tegel-link niet onder de balk landt. */
+section.pijn{display:flex;flex-direction:column;gap:1.1rem;padding-top:2rem;border-top:1px solid var(--hairline-2);scroll-margin-top:5rem}
 .kop{display:flex;align-items:baseline;gap:.9rem;flex-wrap:wrap}
 .num{font-size:.78rem;font-weight:800;letter-spacing:.06em;color:var(--klei);
   border:1px solid var(--klei);border-radius:999px;padding:.16rem .6rem;flex:none}
