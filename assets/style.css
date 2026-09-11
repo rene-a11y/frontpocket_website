@@ -1,46 +1,49 @@
 /* ============================================================
-   frontpocket. — gedeelde stylesheet voor landing en check
+   frontpocket — gedeelde stylesheet voor landing en check
    Één lettertype (Schibsted Grotesk), drie kleurmodi
    (systeemlicht, systeemdonker, handmatig via data-theme)
+   Huisstijl: teal #20C7A5 (accent), navy #172B3A (ink), lichte
+   mint #DDF8F2 (zacht accentvlak). --klei/--klei-* namen zijn
+   behouden voor bestaande selectors, maar dragen nu de teal.
    ============================================================ */
 
 :root{
-  --zand:#F2EDE4; --surface:#FFFFFF; --shade:#EAE3D8;
-  --ink:#17161A; --ink-2:#33313A; --muted:#5C5960; --faint:#807C86;
-  --klei:#C6553D; --klei-dark:#A8452F; --klei-soft:#F6E4DE;
+  --zand:#F5F1EA; --surface:#FFFFFF; --shade:#EAE3D8;
+  --ink:#172B3A; --ink-2:#2E4152; --muted:#5A6C7B; --faint:#8494A2;
+  --klei:#20C7A5; --klei-dark:#159A80; --klei-soft:#DDF8F2;
   --hairline:#DED7CC; --hairline-2:#C9C0B3;
-  --donker:#17161A; --on-donker:#F2EDE4; --on-donker-muted:#A9A4A0; --donker-line:#3C393F;
+  --donker:#172B3A; --on-donker:#EDF6F2; --on-donker-muted:#9AB0BE; --donker-line:#2E4152;
   --illu-bg:#EAE3D8; --illu-glow:#E2DACD; --illu-van:#FFFFFF; --illu-roof:#DED7CC;
-  --illu-glass:#CFC7BA; --illu-inside:#17161A; --illu-panel:#F2EDE4; --illu-line:#17161A;
-  --illu-tyre:#17161A; --illu-hub:#C9C0B3; --illu-jacket:#2C2A30; --illu-hivis:#C6553D;
-  --illu-trousers:#3C393F; --illu-boot:#17161A; --illu-skin:#D9AE92; --illu-cap:#17161A;
-  --illu-dark:#0E0D10; --illu-shadow:rgba(23,22,26,.12);
+  --illu-glass:#CFC7BA; --illu-inside:#172B3A; --illu-panel:#F5F1EA; --illu-line:#172B3A;
+  --illu-tyre:#172B3A; --illu-hub:#C9C0B3; --illu-jacket:#2E4152; --illu-hivis:#F58F2E;
+  --illu-trousers:#3C4E5D; --illu-boot:#172B3A; --illu-skin:#D9AE92; --illu-cap:#172B3A;
+  --illu-dark:#0F1D28; --illu-shadow:rgba(23,43,58,.14);
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
-    --zand:#141316; --surface:#1D1C20; --shade:#26242A;
-    --ink:#F2EDE4; --ink-2:#D6D1CA; --muted:#A29D98; --faint:#837E7A;
-    --klei:#E07A5F; --klei-dark:#C6553D; --klei-soft:#2E1F1B;
-    --hairline:#2C2A30; --hairline-2:#3C393F;
-    --donker:#0E0D10; --on-donker:#F2EDE4; --on-donker-muted:#A29D98; --donker-line:#33313A;
-    --illu-bg:#26242A; --illu-glow:#2C2A30; --illu-van:#33313A; --illu-roof:#2C2A30;
-    --illu-glass:#46434B; --illu-inside:#0E0D10; --illu-panel:#3C393F; --illu-line:#A29D98;
-    --illu-tyre:#141316; --illu-hub:#5C5960; --illu-jacket:#3C393F; --illu-hivis:#E07A5F;
-    --illu-trousers:#46434B; --illu-boot:#141316; --illu-skin:#C99878; --illu-cap:#26242A;
-    --illu-dark:#0A090C; --illu-shadow:rgba(0,0,0,.4);
+    --zand:#0F1D28; --surface:#182937; --shade:#213546;
+    --ink:#EDF6F2; --ink-2:#CFDBE3; --muted:#9AB0BE; --faint:#7B8F9C;
+    --klei:#3FDDBB; --klei-dark:#20C7A5; --klei-soft:#1E3B44;
+    --hairline:#213546; --hairline-2:#324759;
+    --donker:#0B1620; --on-donker:#EDF6F2; --on-donker-muted:#9AB0BE; --donker-line:#2E4152;
+    --illu-bg:#213546; --illu-glow:#2E4152; --illu-van:#2E4152; --illu-roof:#213546;
+    --illu-glass:#3C4E5D; --illu-inside:#0B1620; --illu-panel:#324759; --illu-line:#9AB0BE;
+    --illu-tyre:#0F1D28; --illu-hub:#5A6C7B; --illu-jacket:#324759; --illu-hivis:#F58F2E;
+    --illu-trousers:#3C4E5D; --illu-boot:#0F1D28; --illu-skin:#C99878; --illu-cap:#213546;
+    --illu-dark:#08111A; --illu-shadow:rgba(0,0,0,.4);
   }
 }
 :root[data-theme="dark"]{
-  --zand:#141316; --surface:#1D1C20; --shade:#26242A;
-  --ink:#F2EDE4; --ink-2:#D6D1CA; --muted:#A29D98; --faint:#837E7A;
-  --klei:#E07A5F; --klei-dark:#C6553D; --klei-soft:#2E1F1B;
-  --hairline:#2C2A30; --hairline-2:#3C393F;
-  --donker:#0E0D10; --on-donker:#F2EDE4; --on-donker-muted:#A29D98; --donker-line:#33313A;
-  --illu-bg:#26242A; --illu-glow:#2C2A30; --illu-van:#33313A; --illu-roof:#2C2A30;
-  --illu-glass:#46434B; --illu-inside:#0E0D10; --illu-panel:#3C393F; --illu-line:#A29D98;
-  --illu-tyre:#141316; --illu-hub:#5C5960; --illu-jacket:#3C393F; --illu-hivis:#E07A5F;
-  --illu-trousers:#46434B; --illu-boot:#141316; --illu-skin:#C99878; --illu-cap:#26242A;
-  --illu-dark:#0A090C; --illu-shadow:rgba(0,0,0,.4);
+  --zand:#0F1D28; --surface:#182937; --shade:#213546;
+  --ink:#EDF6F2; --ink-2:#CFDBE3; --muted:#9AB0BE; --faint:#7B8F9C;
+  --klei:#3FDDBB; --klei-dark:#20C7A5; --klei-soft:#1E3B44;
+  --hairline:#213546; --hairline-2:#324759;
+  --donker:#0B1620; --on-donker:#EDF6F2; --on-donker-muted:#9AB0BE; --donker-line:#2E4152;
+  --illu-bg:#213546; --illu-glow:#2E4152; --illu-van:#2E4152; --illu-roof:#213546;
+  --illu-glass:#3C4E5D; --illu-inside:#0B1620; --illu-panel:#324759; --illu-line:#9AB0BE;
+  --illu-tyre:#0F1D28; --illu-hub:#5A6C7B; --illu-jacket:#324759; --illu-hivis:#F58F2E;
+  --illu-trousers:#3C4E5D; --illu-boot:#0F1D28; --illu-skin:#C99878; --illu-cap:#213546;
+  --illu-dark:#08111A; --illu-shadow:rgba(0,0,0,.4);
 }
 
 *{box-sizing:border-box}
@@ -61,11 +64,17 @@ a{color:inherit}
 .kop-groep{display:flex;flex-direction:column;gap:.45rem;margin-bottom:1.3rem}
 .kop-groep p{font-size:1.02rem;max-width:42rem}
 
-/* woordmerk — tracking gedempt naar -.03em omdat het merk uit 11
-   letters bestaat; met tightere tracking klapt het woord dicht */
-.wm{font-weight:800;letter-spacing:-.03em;color:var(--ink);line-height:1}
-.wm b{font-weight:800}
-.wm i{font-style:normal;color:var(--klei)}
+/* woordmerk = beeldmerk-icoon + "frontpocket"-tekst. Tracking op
+   -.03em omdat het woord uit 11 letters bestaat; tighter klapt het
+   dicht. De .wm-mark span dient als icoon-drager (mask), zodat we
+   in donkere blokken kleuren via CSS-variabelen kunnen omzetten. */
+.wm{display:inline-flex;align-items:center;gap:.42em;font-weight:800;letter-spacing:-.03em;
+  color:var(--ink);line-height:1}
+.wm .wm-mark{width:1em;height:1em;flex:none;display:inline-block;position:relative}
+.wm .wm-mark::before,.wm .wm-mark::after{content:"";position:absolute;inset:0;
+  -webkit-mask:var(--wm-mask) center/contain no-repeat;mask:var(--wm-mask) center/contain no-repeat}
+.wm .wm-mark::before{--wm-mask:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M18 12h28a8 8 0 0 1 8 8v4H10v-4a8 8 0 0 1 8-8z'/%3E%3C/svg%3E");background:var(--wm-top,var(--klei))}
+.wm .wm-mark::after{--wm-mask:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M10 28h44v16a8 8 0 0 1-8 8H18a8 8 0 0 1-8-8V28zm8 8h28a4 4 0 0 1 0 8H18a4 4 0 0 1 0-8z' fill-rule='evenodd'/%3E%3C/svg%3E");background:var(--wm-bottom,var(--ink))}
 .merk{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;
   padding:1.15rem 0 .95rem;border-bottom:1px solid var(--hairline)}
 .merk .wm{font-size:1.6rem}

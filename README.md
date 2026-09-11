@@ -1,4 +1,4 @@
-# frontpocket. — website
+# frontpocket — website
 
 Statische site (twee pagina's) voor **frontpocket.nl**. Gehost op Strato, gedeployed via GitHub Actions.
 
@@ -17,7 +17,9 @@ Statische site (twee pagina's) voor **frontpocket.nl**. Gehost op Strato, gedepl
 │   ├── style.css         gedeelde stylesheet (alle tokens hier)
 │   ├── check.js          vanilla JS voor de check
 │   ├── config.js         Calendly-URL + analytics-stub
-│   ├── favicon.svg       f met kleikleurige punt
+│   ├── favicon.svg       navy tegel met teal/mint pocket-icoon
+│   ├── logo.svg          beeldmerk (teal top, navy bottom) voor licht
+│   ├── logo-donker.svg   beeldmerk voor donkere achtergrond
 │   └── rene.jpg          portret
 ├── robots.txt            Disallow: / (site staat op noindex)
 ├── .htaccess             HTTPS-forceren, .html verbergen, caching
@@ -81,7 +83,8 @@ Beide pagina's staan op `<meta name="robots" content="noindex,nofollow">` en `ro
 
 ## Merk
 
-- Woordmerk: altijd `frontpocket.` — kleine letters, punt in klei (`#C6553D`)
+- Woordmerk: beeldmerk (pocket-icoon) + `frontpocket` in kleine letters, zonder punt
+- Kleuren: teal `#20C7A5` (accent), navy `#172B3A` (ink), lichte mint `#DDF8F2` (zacht accent)
 - Lopende tekst: `frontpocket`, ook aan het begin van een zin. Altijd kleine letters.
 - frontpocket is een handelsnaam van IAS17 Consultancy BV, Hoorn
 - Alle bedragen zijn exclusief btw

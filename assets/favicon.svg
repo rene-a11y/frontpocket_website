@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="14" fill="#17161A"/>
-  <text x="8" y="46" font-family="'Schibsted Grotesk','Segoe UI',system-ui,sans-serif" font-weight="800" font-size="40" letter-spacing="-2" fill="#F2EDE4">f</text>
-  <circle cx="45" cy="42" r="6" fill="#C6553D"/>
+  <rect width="64" height="64" rx="14" fill="#172B3A"/>
+  <g transform="translate(9.6 9.6) scale(0.7)">
+    <path d="M18 12h28a8 8 0 0 1 8 8v4H10v-4a8 8 0 0 1 8-8z" fill="#20C7A5"/>
+    <path d="M10 28h44v16a8 8 0 0 1-8 8H18a8 8 0 0 1-8-8V28z" fill="#DDF8F2"/>
+    <rect x="18" y="36" width="28" height="8" rx="4" fill="#172B3A"/>
+  </g>
 </svg>
