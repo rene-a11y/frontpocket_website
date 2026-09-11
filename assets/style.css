@@ -107,18 +107,21 @@ header.hero{display:grid;grid-template-columns:1fr;gap:1.9rem;align-items:center
 @media(min-width:34rem){.po{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(min-width:58rem){.po{grid-template-columns:repeat(3,minmax(0,1fr))}}
 .pokaart{background:var(--surface);border:1px solid var(--hairline);border-radius:14px;
-  padding:1.15rem 1.2rem;display:flex;flex-direction:column;gap:.75rem;
-  color:inherit;text-decoration:none;transition:border-color .15s ease}
-.pokaart:hover{border-color:var(--ink)}
+  padding:1rem 1.1rem 1.05rem;display:flex;flex-direction:column;gap:.5rem;
+  color:inherit;text-decoration:none;position:relative;
+  transition:border-color .15s ease, transform .15s ease, box-shadow .15s ease}
+.pokaart:hover{border-color:var(--ink);transform:translateY(-2px);box-shadow:0 6px 18px var(--illu-shadow)}
 .pokaart:focus-visible{outline:2px solid var(--klei);outline-offset:2px}
-.pokaart h3{font-size:1rem}
-.pokaart .nu,.pokaart .met{display:flex;flex-direction:column;gap:.15rem;font-size:.94rem;line-height:1.45}
-.pokaart .nu span,.pokaart .met span{font-size:.64rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.pokaart .nr{position:absolute;top:.85rem;right:1rem;font-size:.7rem;font-weight:800;
+  letter-spacing:.1em;color:var(--klei);font-variant-numeric:tabular-nums;line-height:1}
+.pokaart h3{font-size:1.05rem;letter-spacing:-.02em;line-height:1.2;padding-right:2.1rem}
+.pokaart .nu,.pokaart .met{display:flex;flex-direction:column;gap:.1rem;font-size:.86rem;line-height:1.4}
+.pokaart .nu span,.pokaart .met span{font-size:.58rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
 .pokaart .nu span{color:var(--faint)}
 .pokaart .nu{color:var(--muted)}
 .pokaart .met span{color:var(--klei)}
-.pokaart .met{color:var(--ink);border-top:1px solid var(--hairline);padding-top:.7rem}
-.pokaart .po-link{margin-top:auto;font-size:.86rem;font-weight:700;color:var(--klei);
+.pokaart .met{color:var(--ink);border-top:1px solid var(--hairline);padding-top:.5rem}
+.pokaart .po-link{margin-top:auto;padding-top:.35rem;font-size:.82rem;font-weight:700;color:var(--klei);
   letter-spacing:-.005em;display:inline-flex;align-items:center;gap:.3em;
   transition:transform .15s ease}
 .pokaart:hover .po-link{transform:translateX(2px)}
