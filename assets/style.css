@@ -231,6 +231,19 @@ ul.plain li::before{content:"";width:.5rem;height:.5rem;margin-top:.55rem;backgr
 footer.voet{border-top:1px solid var(--hairline);padding-top:1.3rem;display:flex;flex-direction:column;gap:.4rem;
   font-size:.86rem;color:var(--faint)}
 footer.voet .wm{font-size:1.15rem;margin-bottom:.3rem}
+footer.voet .voetlinks{display:flex;flex-wrap:wrap;gap:.4rem 1.2rem;margin-top:.55rem;font-size:.86rem}
+footer.voet .voetlinks a{color:var(--muted);text-decoration:none;border-bottom:1px solid transparent}
+footer.voet .voetlinks a:hover{color:var(--ink);border-bottom-color:var(--hairline-2)}
+
+/* voorwaarden-pagina */
+main.voorwaarden{max-width:46rem;margin:0 auto;display:flex;flex-direction:column;gap:1.8rem}
+main.voorwaarden .kop-groep{margin-bottom:0}
+main.voorwaarden section{display:flex;flex-direction:column;gap:.5rem}
+main.voorwaarden h2{font-size:1.15rem;font-weight:700;letter-spacing:-.015em}
+main.voorwaarden p{font-size:.98rem;line-height:1.6}
+main.voorwaarden .voorwaarden-terug{margin-top:.5rem;font-size:.95rem}
+main.voorwaarden .voorwaarden-terug a{color:var(--klei);text-decoration:none;font-weight:600;border-bottom:1px solid var(--klei-soft)}
+main.voorwaarden .voorwaarden-terug a:hover{border-bottom-color:var(--klei)}
 
 /* voorbeeldofferte — bewust vaste lichte weergave */
 .a4wrap{display:flex;flex-direction:column;gap:.6rem}
