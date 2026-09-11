@@ -103,8 +103,8 @@
   var $ = function(id){ return document.getElementById(id); };
 
   function track(naam, extra){
-    if (window.FP_ANALYTICS && typeof window.FP_ANALYTICS.track === "function") {
-      try { window.FP_ANALYTICS.track(naam, extra || {}); } catch(e) {}
+    if (window.FRONTPOCKET_ANALYTICS && typeof window.FRONTPOCKET_ANALYTICS.track === "function") {
+      try { window.FRONTPOCKET_ANALYTICS.track(naam, extra || {}); } catch(e) {}
     }
   }
 
@@ -225,8 +225,8 @@
 
   // Wire up Calendly-knop met de gedeelde config
   var boek = $("boek");
-  if (boek && window.FP_CONFIG) {
-    boek.href = window.FP_CONFIG.calendlyUrl;
+  if (boek && window.FRONTPOCKET_CONFIG) {
+    boek.href = window.FRONTPOCKET_CONFIG.calendlyUrl;
     boek.addEventListener("click", function(){
       track("calendly_click", { plek: "check-uitkomst", grootste_lek: grootsteLek });
     });

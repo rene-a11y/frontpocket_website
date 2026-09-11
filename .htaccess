@@ -1,4 +1,4 @@
-# Front Pocket — statische site op Strato shared hosting
+# frontpocket — statische site op Strato shared hosting
 # HTTPS forceren, .html verbergen, veilige headers, wat caching.
 
 Options -Indexes

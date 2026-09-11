@@ -61,8 +61,9 @@ a{color:inherit}
 .kop-groep{display:flex;flex-direction:column;gap:.45rem;margin-bottom:1.3rem}
 .kop-groep p{font-size:1.02rem;max-width:42rem}
 
-/* woordmerk */
-.wm{font-weight:800;letter-spacing:-.045em;color:var(--ink);line-height:1}
+/* woordmerk — tracking gedempt (van -.045em naar -.03em) omdat
+   `frontpocket` een stuk langer is dan `fixyo` en anders dichtklapt */
+.wm{font-weight:800;letter-spacing:-.03em;color:var(--ink);line-height:1}
 .wm b{font-weight:800}
 .wm i{font-style:normal;color:var(--klei)}
 .merk{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;

@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Front Pocket — maatwerkapps voor bouw en buitenwerk</title>
-<meta name="description" content="Front Pocket bouwt in twee weken een app op maat voor jouw bedrijf. Offertes, werkbonnen, planning, meerwerk en onderhoud in één app die op jouw manier werkt. Vanaf €5.000.">
+<title>frontpocket — maatwerkapps voor bouw en buitenwerk</title>
+<meta name="description" content="frontpocket bouwt in twee weken een app op maat voor jouw bedrijf. Offertes, werkbonnen, planning, meerwerk en onderhoud in één app die op jouw manier werkt. Vanaf €5.000.">
 <meta name="robots" content="noindex,nofollow">
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="Front Pocket — maatwerkapps voor bouw en buitenwerk">
+<meta property="og:title" content="frontpocket — maatwerkapps voor bouw en buitenwerk">
 <meta property="og:description" content="Jouw papierwerk vreet je avonden op. Wij bouwen de app die het overneemt. Vanaf €5.000.">
 <meta property="og:image" content="/assets/og.png">
 <meta property="og:locale" content="nl_NL">
@@ -102,22 +102,22 @@
       <div class="pokaart">
         <h3>Je avonden</h3>
         <div class="nu"><span>Nu</span>Om vier uur stopt het werk en begint het papierwerk.</div>
-        <div class="met"><span>Met Front Pocket</span>Bonnen, uren en offertes rond je af op de bouw, in minuten.</div>
+        <div class="met"><span>Met frontpocket</span>Bonnen, uren en offertes rond je af op de bouw, in minuten.</div>
       </div>
       <div class="pokaart">
         <h3>Je marge</h3>
         <div class="nu"><span>Nu</span>Meerwerk staat nergens, materiaal haal je twee keer.</div>
-        <div class="met"><span>Met Front Pocket</span>Alles wordt vastgelegd op het moment zelf, en je ziet per klus wat er overblijft.</div>
+        <div class="met"><span>Met frontpocket</span>Alles wordt vastgelegd op het moment zelf, en je ziet per klus wat er overblijft.</div>
       </div>
       <div class="pokaart">
         <h3>Je klanten</h3>
         <div class="nu"><span>Nu</span>Te laat een offerte, nooit teruggebeld, restpunten blijven hangen.</div>
-        <div class="met"><span>Met Front Pocket</span>Iedereen krijgt binnen een minuut antwoord en niets blijft liggen.</div>
+        <div class="met"><span>Met frontpocket</span>Iedereen krijgt binnen een minuut antwoord en niets blijft liggen.</div>
       </div>
       <div class="pokaart">
         <h3>Je hoofd</h3>
         <div class="nu"><span>Nu</span>Alles zit tussen je oren, dus kun je niets overdragen.</div>
-        <div class="met"><span>Met Front Pocket</span>Klanten, klussen en afspraken staan op &eacute;&eacute;n plek die iemand kan overnemen.</div>
+        <div class="met"><span>Met frontpocket</span>Klanten, klussen en afspraken staan op &eacute;&eacute;n plek die iemand kan overnemen.</div>
       </div>
     </div>
   </div>
@@ -411,7 +411,7 @@
 
   <footer class="voet">
     <span class="wm">frontpocket<i>.</i></span>
-    <p>Front Pocket is een handelsnaam van IAS17 Consultancy BV, Hoorn.</p>
+    <p>frontpocket is een handelsnaam van IAS17 Consultancy BV, Hoorn.</p>
     <p>Alle bedragen op deze pagina zijn exclusief btw. De rekenvoorbeelden zijn voorbeelden, geen beloftes.</p>
   </footer>
 
@@ -421,10 +421,10 @@
 <script>
   // Zet Calendly-URL op alle boekingsknoppen
   document.querySelectorAll('a[data-boek]').forEach(function(a){
-    a.href = window.FP_CONFIG.calendlyUrl;
+    a.href = window.FRONTPOCKET_CONFIG.calendlyUrl;
     a.addEventListener('click', function(){
-      if (window.FP_ANALYTICS && typeof window.FP_ANALYTICS.track === 'function') {
-        window.FP_ANALYTICS.track('calendly_click', { plek: a.getAttribute('data-boek') });
+      if (window.FRONTPOCKET_ANALYTICS && typeof window.FRONTPOCKET_ANALYTICS.track === 'function') {
+        window.FRONTPOCKET_ANALYTICS.track('calendly_click', { plek: a.getAttribute('data-boek') });
       }
     });
   });

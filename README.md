@@ -66,7 +66,7 @@ Repo → Actions → "Deploy naar Strato" → Run workflow.
 
 ## Analytics
 
-Nog niet gekozen. `assets/config.js` heeft een no-op `FP_ANALYTICS.track()`. De code roept die op vier momenten aan:
+Nog niet gekozen. `assets/config.js` heeft een no-op `FRONTPOCKET_ANALYTICS.track()`. De code roept die op vier momenten aan:
 
 - `check_gestart`
 - `check_afgerond` (met `grootste_lek`, `uren_per_week`, `bedrag_per_jaar`)
@@ -82,6 +82,6 @@ Beide pagina's staan op `<meta name="robots" content="noindex,nofollow">` en `ro
 ## Merk
 
 - Woordmerk: altijd `frontpocket.` — kleine letters, punt in klei (`#C6553D`)
-- Lopende tekst: Front Pocket met hoofdletters F en P
-- Front Pocket is een handelsnaam van IAS17 Consultancy BV, Hoorn
+- Lopende tekst: `frontpocket`, ook aan het begin van een zin. Altijd kleine letters.
+- frontpocket is een handelsnaam van IAS17 Consultancy BV, Hoorn
 - Alle bedragen zijn exclusief btw
