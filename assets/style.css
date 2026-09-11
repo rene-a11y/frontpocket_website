@@ -115,12 +115,8 @@ header.hero{display:grid;grid-template-columns:1fr;gap:1.9rem;align-items:center
 .pokaart .nr{position:absolute;top:.85rem;right:1rem;font-size:.7rem;font-weight:800;
   letter-spacing:.1em;color:var(--klei);font-variant-numeric:tabular-nums;line-height:1}
 .pokaart h3{font-size:1.05rem;letter-spacing:-.02em;line-height:1.2;padding-right:2.1rem}
-.pokaart .nu,.pokaart .met{display:flex;flex-direction:column;gap:.1rem;font-size:.86rem;line-height:1.4}
-.pokaart .nu span,.pokaart .met span{font-size:.58rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
-.pokaart .nu span{color:var(--faint)}
-.pokaart .nu{color:var(--muted)}
-.pokaart .met span{color:var(--klei)}
-.pokaart .met{color:var(--ink);border-top:1px solid var(--hairline);padding-top:.5rem}
+.pokaart .nu{display:flex;flex-direction:column;gap:.1rem;font-size:.86rem;line-height:1.4;color:var(--muted)}
+.pokaart .nu span{font-size:.58rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
 .pokaart .po-link{margin-top:auto;padding-top:.35rem;font-size:.82rem;font-weight:700;color:var(--klei);
   letter-spacing:-.005em;display:inline-flex;align-items:center;gap:.3em;
   transition:transform .15s ease}
