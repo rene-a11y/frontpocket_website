@@ -79,6 +79,7 @@ a{color:inherit}
 .merk{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;
   padding:1.15rem 0 .95rem;border-bottom:1px solid var(--hairline)}
 .merk .wm{font-size:1.6rem}
+.merk .logo{height:2.8rem;width:auto;display:block;max-width:100%}
 .merk .tag{font-size:.86rem;color:var(--muted)}
 
 /* hero */
