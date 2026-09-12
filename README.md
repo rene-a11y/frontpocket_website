@@ -1,6 +1,6 @@
-# frontpocket — website
+# Frontpocket — website
 
-Statische site (twee pagina's) voor **frontpocket.nl**. Gehost op Strato, gedeployed via GitHub Actions.
+Statische site (drie pagina's) voor **frontpocket.nl**. Gehost op Strato, gedeployed via GitHub Actions.
 
 ## Pagina's
 
@@ -17,10 +17,9 @@ Statische site (twee pagina's) voor **frontpocket.nl**. Gehost op Strato, gedepl
 │   ├── style.css         gedeelde stylesheet (alle tokens hier)
 │   ├── check.js          vanilla JS voor de check
 │   ├── config.js         Calendly-URL + analytics-stub
-│   ├── favicon.svg       navy tegel met teal/mint pocket-icoon
-│   ├── logo.svg          beeldmerk (teal top, navy bottom) voor licht
-│   ├── logo-donker.svg   beeldmerk voor donkere achtergrond
-│   └── rene.jpg          portret
+│   ├── favicon.svg       taupe tegel met witte F
+│   ├── rene.png          portret René
+│   └── jan.png           portret Jan
 ├── robots.txt            Disallow: / (site staat op noindex)
 ├── .htaccess             HTTPS-forceren, .html verbergen, caching
 ├── .github/workflows/deploy.yml   GitHub Actions FTP-deploy
@@ -46,7 +45,7 @@ Open dan http://localhost:8000
 ### Eenmalige setup
 
 1. **SFTP-account bij Strato**
-   Klantenlogin → Hosting → FTP-manager → nieuw account. **Belangrijk:** stel de startmap in op de webroot van frontpocket.nl (meestal `/` of `/htdocs/`) — niet op een submap zoals `wp-content`, anders komt de site op frontpocket.nl/wp-content/ terecht.
+   Klantenlogin → Hosting → FTP-manager → nieuw account. **Belangrijk:** stel de startmap in op de webroot van `frontpocket.nl` (meestal `/` of `/htdocs/`) — niet op een submap zoals `wp-content`, anders komt de site op `frontpocket.nl/wp-content/` terecht.
 
 2. **GitHub secrets zetten**
    Repo → Settings → Secrets and variables → Actions → New repository secret. Zet:
@@ -83,8 +82,10 @@ Beide pagina's staan op `<meta name="robots" content="noindex,nofollow">` en `ro
 
 ## Merk
 
-- Woordmerk: beeldmerk (pocket-icoon) + `frontpocket` in kleine letters, zonder punt
-- Kleuren: teal `#20C7A5` (accent), navy `#172B3A` (ink), lichte mint `#DDF8F2` (zacht accent)
-- Lopende tekst: `frontpocket`, ook aan het begin van een zin. Altijd kleine letters.
-- frontpocket is een handelsnaam van IAS17 Consultancy BV, Hoorn
+Zie `MERK.md` voor het volledige huisstijldocument. Kort:
+
+- Woordmerk: typografisch, `<b>Front</b>pocket` — vet taupe + normaal donker, geen beeldmerk, hoofdletter F
+- Kleuren: taupe `#5F5A51` (accent), donker `#2B3034` (ink), grond `#F6F5F2` (achtergrond)
+- Lopende tekst: `Frontpocket`, hoofdletter F, verder gewoon
+- Frontpocket is een handelsnaam van IAS17 Consultancy BV, Hoorn
 - Alle bedragen zijn exclusief btw
