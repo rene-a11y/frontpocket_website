@@ -13,11 +13,18 @@ HTML:
 CSS:
 
 ```css
-.wm{font-weight:400;letter-spacing:-.02em;line-height:1;color:var(--ink);white-space:nowrap}
-.wm b{font-weight:800;color:var(--accent)}
+.wm{font-family:Arimo,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight:400;letter-spacing:-.03em;line-height:1;color:var(--ink);white-space:nowrap}
+.wm b{font-weight:700;color:var(--accent)}
 ```
 
 Op donker vlak (voettekst en boekingsblok) krijgt `.wm` `color:var(--on-donker)`. In donkere modus is `--accent` het lichte taupe (`#A39B8E`), dat leest goed op donker.
+
+## Lettertype
+
+Het woordmerk staat in **Arimo** (Google Fonts, gewichten 400 en 700), met systeem-fallback op Helvetica Neue / Helvetica / Arial. De rest van de site (koppen, lopende tekst, knoppen, cijfers) staat in **Schibsted Grotesk**.
+
+De reden voor twee lettertypes: het merk is als beeld aangeleverd in een neo-grotesk van het Helvetica/Arial-type. Dat woordmerk moet er in de mailhandtekening, op LinkedIn en op de site hetzelfde uitzien, dus krijgt het zijn eigen familie. Arimo is metrisch gelijk aan Arial en gratis via Google Fonts, dus overal reproduceerbaar. `Front` staat op gewicht 700 (Arimo heeft geen 800, en de referentie is gewoon vet, niet extra vet).
 
 ## Palet
 
