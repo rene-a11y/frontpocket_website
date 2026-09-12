@@ -2,15 +2,17 @@
    Frontpocket - gedeelde stylesheet voor landing en check
    Een lettertype (Schibsted Grotesk), drie kleurmodi
    (systeemlicht, systeemdonker, handmatig via data-theme)
-   Huisstijl (12 sep 2026): typografisch woordmerk, geen felle
-   accentkleur. Palet: taupe #5F5A51, donker #2B3034, grond
-   #F6F5F2. De eerdere teal/navy-lijn is vervallen.
+   Huisstijl: typografisch woordmerk in Arimo op een taupe/donker/
+   grond-basis (--ink #2B3034, --grond #F6F5F2) met een teal
+   accent (--accent #20C7A5) voor knoppen, badges, cijfers en
+   check-icoontjes. De navy en de eerdere all-taupe-lijnen zijn
+   vervallen.
    ============================================================ */
 
 :root{
   --grond:#F6F5F2; --surface:#FFFFFF; --shade:#ECEAE5;
   --ink:#2B3034; --ink-2:#41474C; --muted:#646A6F; --faint:#858B90;
-  --accent:#5F5A51; --accent-dark:#4A463F; --accent-soft:#EFECE6;
+  --accent:#20C7A5; --accent-dark:#159A80; --accent-soft:#DDF8F2;
   --hairline:#E3E0DA; --hairline-2:#CFCAC1;
   --donker:#2B3034; --on-donker:#F6F5F2; --on-donker-muted:#A8ADB1; --donker-line:#43494E;
   --on-accent:#FFFFFF;
@@ -24,10 +26,10 @@
   :root:not([data-theme="light"]){
     --grond:#1B1E21; --surface:#24282C; --shade:#2D3237;
     --ink:#ECEAE6; --ink-2:#CFCBC4; --muted:#A39F98; --faint:#7F7B75;
-    --accent:#A39B8E; --accent-dark:#8C8477; --accent-soft:#33302B;
+    --accent:#3FDDBB; --accent-dark:#20C7A5; --accent-soft:#1E3B44;
     --hairline:#33383D; --hairline-2:#43494E;
     --donker:#121417; --on-donker:#ECEAE6; --on-donker-muted:#A39F98; --donker-line:#33383D;
-    --on-accent:#2B3034;
+    --on-accent:#0B1620;
     --illu-bg:#2D3237; --illu-glow:#33383D; --illu-van:#33383D; --illu-roof:#2D3237;
     --illu-glass:#43494E; --illu-inside:#121417; --illu-panel:#3A4045; --illu-line:#A39F98;
     --illu-tyre:#1B1E21; --illu-hub:#646A6F; --illu-jacket:#43494E; --illu-hivis:#A39B8E;
@@ -38,10 +40,10 @@
 :root[data-theme="dark"]{
   --grond:#1B1E21; --surface:#24282C; --shade:#2D3237;
   --ink:#ECEAE6; --ink-2:#CFCBC4; --muted:#A39F98; --faint:#7F7B75;
-  --accent:#A39B8E; --accent-dark:#8C8477; --accent-soft:#33302B;
+  --accent:#3FDDBB; --accent-dark:#20C7A5; --accent-soft:#1E3B44;
   --hairline:#33383D; --hairline-2:#43494E;
   --donker:#121417; --on-donker:#ECEAE6; --on-donker-muted:#A39F98; --donker-line:#33383D;
-  --on-accent:#2B3034;
+  --on-accent:#0B1620;
   --illu-bg:#2D3237; --illu-glow:#33383D; --illu-van:#33383D; --illu-roof:#2D3237;
   --illu-glass:#43494E; --illu-inside:#121417; --illu-panel:#3A4045; --illu-line:#A39F98;
   --illu-tyre:#1B1E21; --illu-hub:#646A6F; --illu-jacket:#43494E; --illu-hivis:#A39B8E;

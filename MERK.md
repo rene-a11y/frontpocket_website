@@ -18,7 +18,7 @@ CSS:
 .wm b{font-weight:700;color:var(--ink)}
 ```
 
-`Front` staat op de donkere kleur (`--ink`, `#2B3034`), `pocket` op de taupe (`--accent`, `#5F5A51`). Dat komt overeen met de referentie (`input/huisstijl/frontpocket-woordmerk-referentie.png`): het bolle stuk trekt de aandacht via het gewicht, de tweede helft is lichter maar in dezelfde familie.
+`Front` staat op de donkere kleur (`--ink`, `#2B3034`), `pocket` op het teal accent (`--accent`, `#20C7A5`). Op de referentie zit `pocket` in een gedempte taupe; op de site kleurt het mee met het accent dat ook de knoppen, badges en cijfers pakt.
 
 Op donker vlak (voettekst en boekingsblok) krijgt `.wm` `color:var(--on-donker)` en `.wm b` óók `color:var(--on-donker)` — de twee helften worden dan onderscheiden door het gewicht, niet door de kleur.
 
@@ -32,14 +32,14 @@ De reden voor twee lettertypes: het merk is als beeld aangeleverd in een neo-gro
 
 | Rol | Hex (licht) | Hex (donker) | Waarvoor |
 |---|---|---|---|
-| Taupe / accent | `#5F5A51` | `#A39B8E` | het `pocket`-deel van het woordmerk, primaire knoppen, accenten |
-| Donker / ink | `#2B3034` | `#ECEAE6` | het `Front`-deel van het woordmerk, lopende tekst, koppen, donkere vlakken |
-| Wit / surface | `#FFFFFF` | `#24282C` | kaarten, oppervlakken |
+| Accent (teal) | `#20C7A5` | `#3FDDBB` | het `pocket`-deel van het woordmerk, primaire knoppen, badges, cijfers, check-icoontjes |
+| Ink (donker) | `#2B3034` | `#ECEAE6` | het `Front`-deel van het woordmerk, lopende tekst, koppen, donkere vlakken |
+| Surface (wit) | `#FFFFFF` | `#24282C` | kaarten, oppervlakken |
 | Grond | `#F6F5F2` | `#1B1E21` | paginaachtergrond |
 
-Contrast in licht: taupe op wit 6,9:1, wit op taupe 6,9:1, donker op wit 13,4:1 — alles ruim AA. In donkere modus haalt witte tekst op licht taupe maar 2,8:1; de knoptekst wordt daar donker (`#2B3034`) op licht taupe (`#A39B8E`) — 4,9:1. Dat regelt het token `--on-accent` (`#FFFFFF` in licht, `#2B3034` in donker).
+Contrast in licht: donker op wit 13,4:1 (AAA), wit op teal 3,0:1 (nét onder AA voor kleine tekst, maar knoppen zijn bold en groter). Om de knoptekst in donkere modus goed leesbaar te houden staat `--on-accent` daar op donker (`#0B1620`) op licht teal (`#3FDDBB`) — 8,1:1.
 
-Het merk heeft geen felle accentkleur. Dat is een keuze: rust en betrouwbaarheid. Taupe ís de knopkleur; er komt geen kleur bij "voor de knoppen".
+De basis is bewust rustig (grond + donker + wit); teal is de enige felle kleur, en die zit alleen op de plekken waar hij aandacht moet trekken.
 
 ## Knopstaten
 
@@ -55,7 +55,7 @@ Links het woordmerk, rechts de regel `Alles in je pocket.` (met punt). Deze rege
 
 ## Favicon
 
-Taupe tegel `#5F5A51`, ronde hoeken (`rx=14`), witte, vette hoofdletter F als `<path>` — niet als `<text>`, zodat het geen geïnstalleerd lettertype nodig heeft.
+Teal tegel `#20C7A5`, ronde hoeken (`rx=14`), witte, vette hoofdletter F als `<path>` — niet als `<text>`, zodat het geen geïnstalleerd lettertype nodig heeft.
 
 ## Herkomst
 
