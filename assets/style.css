@@ -69,15 +69,16 @@ a{color:inherit}
 .kop-groep p{font-size:1.02rem;max-width:42rem}
 
 /* woordmerk. Typografisch, geen beeldmerk. Twee gewichten:
-   'Front' vet en taupe, 'pocket' normaal en donker. Eigen
-   lettertype (Arimo, metrisch gelijk aan Arial) omdat het merk
-   als beeld is aangeleverd en overal - site, mail, LinkedIn -
-   hetzelfde moet zijn. De rest van de site blijft Schibsted
-   Grotesk. Op donker vlak (footer, boekingsblok) krijgt de
-   donkere helft de --on-donker-kleur; het taupe blijft staan
-   omdat het in donkere modus vanzelf lichter taupe wordt. */
-.wm{font-family:Arimo,"Helvetica Neue",Helvetica,Arial,sans-serif;font-weight:400;letter-spacing:-.03em;line-height:1;color:var(--ink);white-space:nowrap}
-.wm b{font-weight:700;color:var(--accent)}
+   'Front' vet en donker (--ink), 'pocket' normaal en taupe
+   (--accent). Kleuren conform de referentie in input/huisstijl/
+   frontpocket-woordmerk-referentie.png. Eigen lettertype (Arimo,
+   metrisch gelijk aan Arial) omdat het merk als beeld is aange-
+   leverd en overal - site, mail, LinkedIn - hetzelfde moet zijn.
+   De rest van de site blijft Schibsted Grotesk. Op donker vlak
+   (footer, boekingsblok) worden beide helften --on-donker; het
+   verschil tussen Front en pocket zit dan alleen in het gewicht. */
+.wm{font-family:Arimo,"Helvetica Neue",Helvetica,Arial,sans-serif;font-weight:400;letter-spacing:-.03em;line-height:1;color:var(--accent);white-space:nowrap}
+.wm b{font-weight:700;color:var(--ink)}
 .merk{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;
   padding:1.15rem 0 .95rem;border-bottom:1px solid var(--hairline)}
 .merk .wm{font-size:1.6rem}

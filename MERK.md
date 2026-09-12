@@ -14,11 +14,13 @@ CSS:
 
 ```css
 .wm{font-family:Arimo,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-weight:400;letter-spacing:-.03em;line-height:1;color:var(--ink);white-space:nowrap}
-.wm b{font-weight:700;color:var(--accent)}
+    font-weight:400;letter-spacing:-.03em;line-height:1;color:var(--accent);white-space:nowrap}
+.wm b{font-weight:700;color:var(--ink)}
 ```
 
-Op donker vlak (voettekst en boekingsblok) krijgt `.wm` `color:var(--on-donker)`. In donkere modus is `--accent` het lichte taupe (`#A39B8E`), dat leest goed op donker.
+`Front` staat op de donkere kleur (`--ink`, `#2B3034`), `pocket` op de taupe (`--accent`, `#5F5A51`). Dat komt overeen met de referentie (`input/huisstijl/frontpocket-woordmerk-referentie.png`): het bolle stuk trekt de aandacht via het gewicht, de tweede helft is lichter maar in dezelfde familie.
+
+Op donker vlak (voettekst en boekingsblok) krijgt `.wm` `color:var(--on-donker)` en `.wm b` óók `color:var(--on-donker)` — de twee helften worden dan onderscheiden door het gewicht, niet door de kleur.
 
 ## Lettertype
 
@@ -30,8 +32,8 @@ De reden voor twee lettertypes: het merk is als beeld aangeleverd in een neo-gro
 
 | Rol | Hex (licht) | Hex (donker) | Waarvoor |
 |---|---|---|---|
-| Taupe / accent | `#5F5A51` | `#A39B8E` | het `Front` in het woordmerk, primaire knoppen, accenten |
-| Donker / ink | `#2B3034` | `#ECEAE6` | lopende tekst, koppen, donkere vlakken |
+| Taupe / accent | `#5F5A51` | `#A39B8E` | het `pocket`-deel van het woordmerk, primaire knoppen, accenten |
+| Donker / ink | `#2B3034` | `#ECEAE6` | het `Front`-deel van het woordmerk, lopende tekst, koppen, donkere vlakken |
 | Wit / surface | `#FFFFFF` | `#24282C` | kaarten, oppervlakken |
 | Grond | `#F6F5F2` | `#1B1E21` | paginaachtergrond |
 
