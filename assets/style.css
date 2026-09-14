@@ -79,7 +79,7 @@ a{color:inherit}
    De rest van de site blijft Schibsted Grotesk. Op donker vlak
    (footer, boekingsblok) worden beide helften --on-donker; het
    verschil tussen Front en pocket zit dan alleen in het gewicht. */
-.wm{font-family:Arimo,"Helvetica Neue",Helvetica,Arial,sans-serif;font-weight:400;letter-spacing:-.03em;line-height:1;color:var(--accent);white-space:nowrap}
+.wm{font-family:Arimo,"Helvetica Neue",Helvetica,Arial,sans-serif;font-weight:400;letter-spacing:-.03em;line-height:1;color:var(--accent);white-space:nowrap;text-decoration:none}
 .wm b{font-weight:700;color:var(--ink)}
 .merk{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;
   padding:1.15rem 0 .95rem;border-bottom:1px solid var(--hairline)}
