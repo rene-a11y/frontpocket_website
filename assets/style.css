@@ -123,6 +123,7 @@ header.hero{display:grid;grid-template-columns:1fr;gap:1.9rem;align-items:center
   letter-spacing:.1em;color:var(--accent);font-variant-numeric:tabular-nums;line-height:1}
 .pokaart h3{font-size:1.02rem;letter-spacing:-.02em;line-height:1.2;padding-right:2rem}
 .pokaart .nu{margin:0;font-size:.86rem;line-height:1.4;color:var(--muted)}
+.pokaart .raak{margin:.35rem 0 0;font-style:italic;font-size:.88rem;line-height:1.45;color:var(--ink-2);padding-top:.35rem;border-top:1px dashed var(--hairline)}
 
 /* alles-erin */
 .allesblok{background:var(--donker);color:var(--on-donker);border-radius:20px;
@@ -184,9 +185,13 @@ section.pijn{display:flex;flex-direction:column;gap:1.1rem;padding-top:2rem;bord
   padding:1.25rem 1.35rem;display:flex;flex-direction:column;gap:.8rem;align-items:flex-start}
 .band strong{color:var(--ink);font-weight:700}
 
+/* uitgelichte slotregel onder het transformatieblok */
+.slot{font-size:1.15rem;font-weight:700;color:var(--accent);line-height:1.4;letter-spacing:-.015em;max-width:46rem}
+
 /* stappen en zorg */
 .stappen{display:grid;grid-template-columns:1fr;gap:1rem}
 @media(min-width:44rem){.stappen{grid-template-columns:repeat(4,1fr)}}
+@media(min-width:44rem){.stappen.drie{grid-template-columns:repeat(3,1fr)}}
 .stap{background:var(--surface);border:1px solid var(--hairline);border-radius:14px;padding:1.15rem;display:flex;flex-direction:column;gap:.4rem}
 .stap .nr{font-weight:800;font-size:1.7rem;color:var(--accent);line-height:1;letter-spacing:-.03em}
 .stap h3{font-size:1rem}
