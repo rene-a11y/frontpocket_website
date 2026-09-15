@@ -123,7 +123,7 @@ header.hero{display:grid;grid-template-columns:1fr;gap:1.9rem;align-items:center
   letter-spacing:.1em;color:var(--accent);font-variant-numeric:tabular-nums;line-height:1}
 .pokaart h3{font-size:1.02rem;letter-spacing:-.02em;line-height:1.2;padding-right:2rem}
 .pokaart .nu{margin:0;font-size:.86rem;line-height:1.4;color:var(--muted)}
-.pokaart .raak{margin:.35rem 0 0;font-style:italic;font-size:.88rem;line-height:1.45;color:var(--ink-2);padding-top:.35rem;border-top:1px dashed var(--hairline)}
+.pokaart .raak{margin:.35rem 0 0;font-style:italic;font-size:.86rem;line-height:1.4;color:var(--accent)}
 
 /* alles-erin */
 .allesblok{background:var(--donker);color:var(--on-donker);border-radius:20px;
